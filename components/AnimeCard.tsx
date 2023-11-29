@@ -19,8 +19,8 @@ interface Prop {
 }
 
 const variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
+  hidden: { opacity: 0, y: 100 },
+  visible: { opacity: 1, y: 0 },
 };
 
 function AnimeCard({ anime, index }: Prop) {
@@ -31,9 +31,9 @@ function AnimeCard({ anime, index }: Prop) {
       animate='visible'
       transition={{ delay: index * 0.25, ease: 'easeInOut', duration: 0.5 }}
       viewport={{ amount: 0 }}
-      className='max-w-sm rounded relative w-full'
+      className='min-w-[221px] max-w-[221px] rounded relative w-full'
     >
-      <div className='relative w-full h-[37vh]'>
+      <div className='relative w-full h-[37vh] sm:w-[100%] md:h-[300px]'>
         <Image
           src={`https://shikimori.one${anime.image.original}`}
           alt={anime.name}
